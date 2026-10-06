@@ -1,0 +1,14 @@
+<!--getElementByClassName-->
+<body>
+    <h1 class="d1"></h1>
+    <p class="d1"></p>
+</body>
+<script>
+    var empid=parseInt(prompt("Enter Employee ID:"));
+    var empname=prompt("Enter Employee Name:");
+    //I need to display both positions
+    for(var i=0;i<document.getElementsByClassName("d1").length;i++){
+        document.getElementsByClassName("d1")[i].innerHTML="Employee ID is: "+empid+"<br>Employee Name is: "+empname;
+    }
+    //document.getElementsByClassName("d1")[1].innerHTML="Employee ID is: "+empid+"<br>Employee Name is: "+empname;
+</script>

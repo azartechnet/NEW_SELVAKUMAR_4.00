@@ -1,0 +1,17 @@
+<!--getElementByName-->
+<!--when click button need to display-->
+<body>
+    <label>Employee ID:</label>
+    <input type="text" name="empid">
+    <label>Employee Name:</label>
+    <input type="text" name="empname">
+    <input type="submit" value="Submit">
+</body>
+<script>
+    var empid=parseInt(prompt("Enter Employee ID:"));
+    var empname=prompt("Enter Employee Name:");
+    document.getElementsByName("empid")[0].value=empid;
+    document.getElementsByName("empname")[0].value=empname;
+     
+</script>
+

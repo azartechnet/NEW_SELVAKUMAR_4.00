@@ -1,0 +1,22 @@
+<body>
+    <h1 id="title">OriginalTitle</h1>
+    <p id="message">This is a paragraph</p>
+    <button id="myButton">ClickMe</button>
+    <script>
+        let titleElement = document.getElementById("title");
+        let messageElement = document.getElementById("message");
+        let buttonElement = document.getElementById("myButton");
+        //Change content
+        titleElement.innerHTML = "NewTitle";
+        messageElement.innerHTML = "This is a new paragraph";
+        //Change style
+        titleElement.style.color = "blue";
+        messageElement.style.fontSize = "20px";
+        buttonElement.style.backgroundColor = "green";
+        //Add event listener
+        buttonElement.addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+            
+    </script>
+</body>
