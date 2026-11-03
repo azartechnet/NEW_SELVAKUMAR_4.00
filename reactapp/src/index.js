@@ -361,7 +361,7 @@ r1.render(<Sample3/>)*/
 
 //Component updated
 
-class Sample12 extends React.Component
+/*class Sample12 extends React.Component
 {
   constructor()
   {
@@ -392,4 +392,128 @@ class Sample12 extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample12/>)
+r1.render(<Sample12/>)*/
+
+//class component unmounting phase
+
+// class Sample14 extends React.Component
+// {
+//   constructor()
+//   {
+//     super();
+//     this.state={show:true}
+//   }
+//   toggle=()=>{
+//     this.setState({show:!this.state.show})
+//   }
+//   render()
+//   {
+//     return(
+//       <div>
+//         <h1>This is Unmounting Phase</h1>
+//         <button onClick={this.toggle}>Toggle</button>
+//         {this.state.show?<Child/>:null}
+//       </div>
+//     )
+//   }
+// }
+/*class Child extends React.Component
+{
+  componentWillUnmount()
+  {
+    // alert("Component is unmounted")
+    console.log("Component is unmounted")
+  }
+  componentDidMount()
+  {
+    console.log("Component is mounted")
+  }
+  render()
+  {
+    return(
+      <div>
+        <h2>This is Child Component</h2>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Child/>)*/
+
+//useState counterApplication
+
+import { useState } from 'react';
+
+/*const App=()=>{
+  const [count,setCount]=useState(10);
+  return(
+    <div>
+      <h1>Counter:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <button onClick={()=>setCount(count-1)}>Decrement</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root')) 
+r1.render(<App/>)*/
+
+/*function App()
+{
+  const [showPassword,setShowPassword]=useState();//false
+  return(
+    <div>
+       <h2>Password Visibility</h2>
+       <input 
+         type={showPassword ? "text" : "password"} 
+        
+       />
+       <button onClick={() => setShowPassword(!showPassword)}>
+         {showPassword ? "Hide" : "Show"} Password
+       </button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//useState example like and dislike button
+
+/*const App=()=>{
+  const [likes,setLikes]=useState(0);
+  const [dislikes,setDislikes]=useState(0);
+  return(
+    <div>
+      <h1>Likes:{likes}</h1>
+      <h1>Dislikes:{dislikes}</h1>
+      <button onClick={()=>setLikes(likes+1)}>Like</button>
+      <button onClick={()=>setDislikes(dislikes+1)}>Dislike</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//Shopping cart example using useState
+
+const App=()=>{
+  const [cartItems,setCartItems]=useState([]);
+  const addToCart=(t1)=>{
+    setCartItems([...cartItems,t1])
+  }
+  return(
+    <div>
+      <h1>Shopping Cart</h1>
+      <button onClick={()=>addToCart("Item1")}>Add Item1</button>
+      <button onClick={()=>addToCart("Item2")}>Add Item2</button>
+      <button onClick={()=>setCartItems([])}>Reset</button>
+      <h2>Cart Items:</h2>
+      <ul>
+        {cartItems.map((t1,index)=>(
+          <li key={index}>{t1}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)
