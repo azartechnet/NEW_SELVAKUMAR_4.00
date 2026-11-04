@@ -495,7 +495,7 @@ r1.render(<App/>)*/
 
 //Shopping cart example using useState
 
-const App=()=>{
+/*const App=()=>{
   const [cartItems,setCartItems]=useState([]);
   const addToCart=(t1)=>{
     setCartItems([...cartItems,t1])
@@ -516,4 +516,149 @@ const App=()=>{
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<App/>)
+r1.render(<App/>)*/
+
+//useEffect example
+
+import { useEffect } from 'react';
+
+/*const App=()=>{
+  const [count,setCount]=useState(0);
+  useEffect(()=>{
+    document.title=`Count:${count}`
+  },[count])
+  return(
+    <div>
+      <h1>Count:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//Display Message when the component is mounted using useEffect
+/*function App()
+{
+  useEffect(()=>{
+    alert("Welcome to Student Portal")
+  },[])
+  return(
+    <div>
+      <h1>Student Portal</h1>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//studentname display using useEffect
+
+/*function App()
+{
+  const [name,setName]=useState("");
+  useEffect(()=>{
+    if(name)
+    {
+      alert(`Welcome ${name}`)
+    }
+  })
+  return(
+    <div>
+      <h1>Student Name</h1>
+      <input type="text"  onChange={(e)=>setName(e.target.value)}/>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//1. setTimeout (One-Time Delay)
+
+//Schedules a callback to run after the designated number of milliseconds
+
+/*function SayHello() {
+// Logs "Hello" once after 2 seconds (2000 milliseconds)
+const timeoutId = setTimeout(() => {
+  console.log("Hello after 2 seconds!");
+}, 2000);
+// If you change your mind before it executes, you can cancel it:
+//clearTimeout(timeoutId);
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<SayHello/>)*/
+
+
+//2. setInterval (Continuous Repetition)
+
+//Schedules a callback to run continuously,
+//waiting for the designated delay between each start time.
+
+/*function SayHelloInterval() {
+
+  // Logs "Hello" every 2 seconds (2000 milliseconds)
+  const intervalId = setInterval(() => {
+    console.log("Hello every 2 seconds!");
+  }, 2000);
+  
+  // If you change your mind and want to stop it, you can cancel it:
+  //clearInterval(intervalId);
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<SayHelloInterval/>)*/
+
+//Digital timer using setInterval
+
+/*function DigitalTimer() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <div>
+      <h1>Digital Timer</h1>
+      <p>Time: {time} seconds</p>
+    </div>
+  );
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<DigitalTimer/>)*/
+
+//Using useEffect to fetch data from an API and display it in a list
+//https://jsonplaceholder.typicode.com/users
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API when the component mounts
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => setUsers(data))
+      .catch(error => console.error('Error fetching users:', error));
+  }, []);
+
+  return (
+    <div>
+      <h1>User List</h1>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.name} - {user.email} - {user.address.street}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<UserList/>)
