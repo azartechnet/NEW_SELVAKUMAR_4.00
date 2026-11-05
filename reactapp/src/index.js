@@ -85,7 +85,7 @@ r1.render(<MyElem/>)*/
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Sample/>)*/
 
-import Sample from './classComponent';
+//import Sample from './classComponent';
 
 //const r1=ReactDOM.createRoot(document.getElementById('root'))
 //r1.render(<Sample/>)
@@ -442,7 +442,7 @@ r1.render(<Child/>)*/
 
 //useState counterApplication
 
-import { useState } from 'react';
+//import { useState } from 'react';
 
 /*const App=()=>{
   const [count,setCount]=useState(10);
@@ -520,7 +520,7 @@ r1.render(<App/>)*/
 
 //useEffect example
 
-import { useEffect } from 'react';
+//import { useEffect } from 'react';
 
 /*const App=()=>{
   const [count,setCount]=useState(0);
@@ -637,7 +637,7 @@ r1.render(<DigitalTimer/>)*/
 //Using useEffect to fetch data from an API and display it in a list
 //https://jsonplaceholder.typicode.com/users
 
-function UserList() {
+/*function UserList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -661,4 +661,34 @@ function UserList() {
 }
 
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<UserList/>)
+r1.render(<UserList/>)*/
+
+/*import App from './App';
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//useRef example
+
+/*import { useRef } from 'react';
+
+function App() {
+  const inp = useRef(null);
+
+  const handleClick = () => {
+    // Focus the input field when the button is clicked
+    inp.current.focus();
+  };
+
+  return (
+    <div>
+      <h1>useRef Example</h1>
+      <input ref={inp} type="text" placeholder="Type something..." />
+      <button onClick={handleClick}>Focus Input</button>
+    </div>
+  );
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
