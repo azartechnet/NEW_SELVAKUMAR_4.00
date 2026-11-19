@@ -31,7 +31,7 @@
 
 import Link from "next/link";
 
-export default function Home()
+/*export default function Home()
 {
   const students=[
     {id:1,name:"azar"},
@@ -45,6 +45,25 @@ export default function Home()
              <div key={student.id}>
                  <h3>{student.name}</h3>
                  <Link href={`/students/${student.id}`}>ViewDetails</Link>
+             </div>
+         ))}
+    </div>
+  )
+}*/
+
+export default function Home()
+{
+  const students=[
+    "Arun",
+    "Azar"
+  ]
+  return(
+    <div>
+        <h1>StudentList</h1>
+         {students.map((name)=>(
+             <div key={name}>
+                 <h3>{name}</h3>
+                 <Link href={`/student/${name}`}>ViewDetails</Link>
              </div>
          ))}
     </div>
